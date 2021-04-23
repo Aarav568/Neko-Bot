@@ -46,10 +46,39 @@ client.on("message", msg => {
     }
   }
 
-  if(msg.content == "nya nigga"){
-    msg.reply("https://imgur.com/WelizP6")
+  if(msg.content == "nya lewd"){
+    if(msg.channel ){
+      async function getLewd() {
+    try{        
+              const response = await fetch(url + "lewd", requestOptions)
+              const data = await response.json()
+              msg.reply(data.url)
+          } catch (err) {
+              console.log(err)
+          }
+  }
+  getLewd()
+    } else {
+      msg.reply("nope bitch do it in the NSFW channel")
+    }
   }
 
+  if(msg.content == "nya wallpaper"){
+    if(msg.channel.name !== "wallpaper"){
+      msg.reply(`Whore go to "wallpaper" channel`)
+    } else {
+       async function getWallpaper() {
+    try{        
+              const response = await fetch(url + "wallpaper", requestOptions)
+              const data = await response.json()
+              msg.reply(data.url)
+          } catch (err) {
+              console.log(err)
+          }
+  }
+  getWallpaper()
+    }
+  }
 
 })
 async function getNeko() {
