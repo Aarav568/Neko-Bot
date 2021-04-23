@@ -1,3 +1,4 @@
+const app = require("express")()
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const fetch = require("node-fetch")
@@ -62,3 +63,11 @@ async function getNeko() {
 }
 
 client.login("ODM0ODIyMzI5MTgzODk1NjEz.YIGe4Q.AWtR4fos4IMxEkOg0Lq0xfpJ-Qc")
+
+app.get("/", (req, res)=> {
+  res.send("runnin' runnin'")
+})
+
+app.listen(process.env.PORT, ()=> {
+  console.log("NODE STARTED")
+})
