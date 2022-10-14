@@ -2,6 +2,7 @@ const app = require("express")()
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const fetch = require("node-fetch")
+const routes = require("./api/index.js");
 
 var requestOptions = {
     method: 'GET',
@@ -116,9 +117,7 @@ if(message.slice(0,3) == "nya" || "NYA" || "Nya") {
 /*CONFIGURATION--------------------------------------------------------------------------*/
 client.login(process.env.TOKEN)
 
-app.get("/", (req, res)=> {
-  res.send("runnin' runnin'")
-})
+app.use(routes)
 
 app.listen(process.env.PORT, ()=> {
   console.log("NODE STARTED")
