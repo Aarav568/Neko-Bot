@@ -114,7 +114,7 @@ if(message.slice(0,3) == "nya" || "NYA" || "Nya") {
 })
 
 /*CONFIGURATION--------------------------------------------------------------------------*/
-client.login("ODM0ODIyMzI5MTgzODk1NjEz.YIGe4Q.AWtR4fos4IMxEkOg0Lq0xfpJ-Qc")
+client.login(process.env.TOKEN)
 
 app.get("/", (req, res)=> {
   res.send("runnin' runnin'")
